@@ -1,4 +1,32 @@
-const reportWebVitals = (onPerfEntry) => {
+import Enzyme from 'enzyme';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
+
+Enzyme.configure({ adapter: new Adapter() });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const reportWebVitals = (onPerfEntry) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
     import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
       getCLS(onPerfEntry);
@@ -10,4 +38,4 @@ const reportWebVitals = (onPerfEntry) => {
   }
 };
 
-export default reportWebVitals;
+export default reportWebVitals; */
