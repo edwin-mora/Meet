@@ -1,4 +1,8 @@
 {
+  "name": "meet",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://edwin-mora.github.io/Meet",
   "devDependencies": {
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
     "gh-pages": "^4.0.0",
@@ -11,5 +15,16 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "dependencies": {
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
+    "axios": "^0.27.2",
+    "enzyme": "^3.11.0",
+    "nprogress": "^0.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
   }
 }
+
