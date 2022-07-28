@@ -26,7 +26,7 @@ Enzyme.configure({ adapter: new Adapter() });
 
 
 
-/* const reportWebVitals = (onPerfEntry) => {
+const reportWebVitals = (onPerfEntry) => {
   if (onPerfEntry && onPerfEntry instanceof Function) {
     import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
       getCLS(onPerfEntry);
@@ -38,4 +38,4 @@ Enzyme.configure({ adapter: new Adapter() });
   }
 };
 
-export default reportWebVitals; */
+export default reportWebVitals;
