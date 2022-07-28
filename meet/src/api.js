@@ -44,7 +44,7 @@ export const getEvents = async () => {
   if (token) {
     removeQuery();
     const url =
-      "https://0yq7m0wcrg.execute-api.us-east-1.amazonaws.com/dev/api/get-events/{access_token}" +
+      "https://0yq7m0wcrg.execute-api.us-east-1.amazonaws.com/dev/api/get-events" +
       "/" +
       token;
     const result = await axios.get(url);
@@ -102,7 +102,7 @@ const getToken = async (code) => {
     const encodeCode = encodeURIComponent(code);
 
     const response = await fetch(
-      "https://0yq7m0wcrg.execute-api.us-east-1.amazonaws.com/dev/api/token/{code}" +
+      "https://0yq7m0wcrg.execute-api.us-east-1.amazonaws.com/dev/api/token" +
         "/" +
         encodeCode
     );
