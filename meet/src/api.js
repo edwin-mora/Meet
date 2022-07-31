@@ -43,6 +43,7 @@ export const getEvents = async () => {
   if (!navigator.onLine) {
     const data = localStorage.getItem("lastEvents");
     NProgress.done();
+    // eslint-disable-next-line no-undef
     return data ? JSON.parse(events).events : [];;
   }
 
