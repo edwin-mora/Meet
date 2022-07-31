@@ -6,6 +6,7 @@ import NumberOfEvents from "./NumberOfEvents";
 import { extractLocations, getEvents, checkToken, getAccessToken } from "./api";
 import "./nprogress.css/nprogress.css";
 import WelcomeScreen from "./WelcomeScreen";
+import { OfflineAlert } from "./Alert";
 
 class App extends Component {
   state = {
@@ -29,17 +30,30 @@ class App extends Component {
           this.setState({ events, locations: extractLocations(events) });
         }
       });
-    } 
+    }
+    if(!navigator.onLine) {
+      this.setState({
+        offlineText:"You're offline! Showing cached data.",
+      });
+    } else {
+      this.setState({
+        offlineText: "",
+      });
+    }
   }
 
   //offline
-
 
   render() {
     if (this.state.showWelcomeScreen === undefined)
       return <div className="App" />;
     return (
       <div className="App">
+        {!navigator.onLine ? (
+          <OfflineAlert text="No internect connection. Displaying cached data" />
+        ) : (
+          <OfflineAlert text="" />
+        )}
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents}
@@ -52,6 +66,7 @@ class App extends Component {
             getAccessToken();
           }}
         />
+        <OfflineAlert text={this.state.offlineText} />
       </div>
     );
   }
