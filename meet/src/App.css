@@ -115,6 +115,7 @@ input[type="number"] {
   border: 1px solid black;
   border-radius: 8px;
   position: relative;
+  background-color: #fff;
 }
 
 .details-btn {
