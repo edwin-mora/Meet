@@ -2,44 +2,46 @@ import React, { Component } from "react";
 
 class Event extends Component {
   state = {
-    collapsed: true,
-  }
+    showDetails: false,
+  };
 
-  handleButtonClick = () => {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
-  }
+  handleShowDetails = () => {
+    if (this.state.showDetails === false) {
+      this.setState({ showDetails: true });
+    } else {
+      this.setState({ showDetails: false });
+    }
+  };
 
   render() {
+    const showDetails = this.state.showDetails;
     const { event } = this.props;
+
     return (
       <div className="event">
-        <h2 className="event-title">{event.summary}</h2>
-        <h5 className="location">{event.location}</h5>
+        <div className="event-overview">
+          <h2 className="summary">{event.summary}</h2>
+          <p className="location">{event.location}</p>
+          <p className="start-time">{event.start.dateTime}</p>
+          {!showDetails && (
+            <button className="details-button" onClick={this.handleShowDetails}>
+              Show Details
+            </button>
+          )}
+          {showDetails && (
+            <button className="details-button" onClick={this.handleShowDetails}>
+              Hide Details
+            </button>
+          )}
+        </div>
 
-        {this.state.collapsed === false && (
-          <div className="more-detials">
-            <p className="start-date">
-              <label>Date: </label>
-              {event.start.dateTime}
-            </p>
-            <p className="event-description">
-              <label>Event Details: </label>
-              {event.description}
-            </p>
-            <button className="toggleEvent"
-            onClick={this.handleButtonClick}>Hide Details</button>
-            </div>
+        {showDetails && (
+          <div className="event-details">
+            <p className="description">{event.description}</p>
+            <p className="end-time">{event.end.dateTime}</p>
+            <p className="time-zone">{event.start.timeZone}</p>
+          </div>
         )}
-        {this.state.collapsed === true && (
-          <button className="details-button"
-          onClick={this.handleButtonClick}>Show Details
-          </button>
-        )}
-
-
-      
       </div>
     );
   }
