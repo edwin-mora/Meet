@@ -3,6 +3,7 @@ import "./App.css";
 import EventList from "./EventList";
 import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
+import EventGenre from "./EventGenre";
 import { extractLocations, getEvents, checkToken, getAccessToken } from "./api";
 import "./nprogress.css/nprogress.css";
 import WelcomeScreen from "./WelcomeScreen";
@@ -16,7 +17,6 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import EventGenre from "./EventGenre";
 
 class App extends Component {
   state = {
@@ -91,9 +91,9 @@ class App extends Component {
     return (
       <div className="App">
         <div className="app-header">
-        <h2 className="title">The Meet App</h2>
-        {!navigator.onLine && <OfflineAlert text={this.state.offlineText} />}
-        <h4 className="header">Choose any city</h4>
+          <h2 className="title">The Meet App</h2>
+          {!navigator.onLine && <OfflineAlert text={this.state.offlineText} />}
+          <h4 className="header">Choose any city</h4>
         </div>
         <CitySearch updateEvents={this.updateEvents} locations={locations} />
 
@@ -102,32 +102,31 @@ class App extends Component {
           numberOfEvents={numberOfEvents}
         />
         <div className="data-vis-wrapper">
-
-        <h4>Events in each city</h4>
-        <EventGenre events={events} />
-        <ResponsiveContainer height={400}>
-          <ScatterChart
-            width={800}
-            height={400}
-            margin={{
-              top: 20,
-              right: 20,
-              bottom: 20,
-              left: 20,
-            }}
-          >
-            <CartesianGrid />
-            <XAxis type="category" dataKey="city" name="city" />
-            <YAxis
-              type="number"
-              dataKey="number"
-              name="number of events"
-              allowDecimals={false}
-            />
-            <Tooltip cursor={{ strokeDasharray: "3 3" }} />
-            <Scatter data={this.getData()} fill="#8884d8" />
-          </ScatterChart>
-        </ResponsiveContainer>
+          <h4>Events in each city</h4>
+          <EventGenre events={events} />
+          <ResponsiveContainer height={400}>
+            <ScatterChart
+              width={800}
+              height={400}
+              margin={{
+                top: 20,
+                right: 20,
+                bottom: 20,
+                left: 20,
+              }}
+            >
+              <CartesianGrid />
+              <XAxis type="category" dataKey="city" name="city" />
+              <YAxis
+                type="number"
+                dataKey="number"
+                name="number of events"
+                allowDecimals={false}
+              />
+              <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+              <Scatter data={this.getData()} fill="#8884d8" />
+            </ScatterChart>
+          </ResponsiveContainer>
         </div>
 
         <EventList events={events} />
