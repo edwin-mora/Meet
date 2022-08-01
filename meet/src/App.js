@@ -16,7 +16,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { EventGenre } from "./EventGenre";
+import EventGenre from "./EventGenre";
 
 class App extends Component {
   state = {
