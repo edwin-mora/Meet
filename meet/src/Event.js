@@ -1,31 +1,45 @@
 import React, { Component } from "react";
 
 class Event extends Component {
-  toggleDetails = () => {
-    this.setState({ show: !this.state.show });
-  };
+  state = {
+    collapsed: true,
+  }
 
-  constructor() {
-    super();
-    this.state = {
-      show: false,
-    };
+  handleButtonClick = () => {
+    this.setState({
+      collapsed: !this.state.collapsed
+    });
   }
 
   render() {
     const { event } = this.props;
-    const { show } = this.state;
-
     return (
       <div className="event">
-        <h3 className="event-title">{event.summary}</h3>
-        <div className="event-info">
-          {event.start.dateTime} {event.start.timeZone} {event.location}
-        </div>
-        {show && <div className="event-details">{event.description}</div>}
-        <button className="details-button" onClick={this.toggleDetails}>
-          View details
-        </button>
+        <h2 className="event-title">{event.summary}</h2>
+        <h5 className="location">{event.location}</h5>
+
+        {this.state.collapsed === false && (
+          <div className="more-detials">
+            <p className="start-date">
+              <label>Date: </label>
+              {event.start.dateTime}
+            </p>
+            <p className="event-description">
+              <label>Event Details: </label>
+              {event.description}
+            </p>
+            <button className="toggleEvent"
+            onClick={this.handleButtonClick}>Hide Details</button>
+            </div>
+        )}
+        {this.state.collapsed === true && (
+          <button className="details-button"
+          onClick={this.handleButtonClick}>Show Details
+          </button>
+        )}
+
+
+      
       </div>
     );
   }
