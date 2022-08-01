@@ -4,7 +4,7 @@ import "./WelcomeScreen.css";
 function WelcomeScreen(props) {
   return props.showWelcomeScreen ? (
     <div className="WelcomeScreen">
-      <h1>Welcome to the Meet app</h1>
+      <h2>Welcome to the Meet app</h2>
       <h4>
         Log in to see upcoming events around the world for full-stack developers
       </h4>
@@ -21,7 +21,7 @@ o.svg"
           <button
             onClick={props.getAccessToken}
             rel="nofollow noopener"
-            className="btn-text"
+            className="btn-text-welcome"
           >
             <b>Sign in with google</b>
           </button>

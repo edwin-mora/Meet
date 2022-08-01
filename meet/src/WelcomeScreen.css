@@ -1,60 +1,103 @@
+* {
+  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Rubik Moonrocks", cursive;
+}
+
 .WelcomeScreen {
-position: fixed;
-width: 100%;
-height: 100%;
-top: 0;
-background: white;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: honeydew
 }
+
+.WelcomeScreen h2 {
+  font-style: italic;
+  font-weight: 150;
+
+}
+
+.WelcomeScreen h4 {
+  color: #494949;
+}
+
+
 .login-button {
-color: #494949;
-text-transform: uppercase;
-text-decoration: none;
-background: #ffffff;
-border: 4px solid #494949;
-display: inline-block;
-transition: all 0.4s ease 0s;
-min-width: 10rem;
-margin: 1rem;
+  color: #494949;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  border: 4px solid #494949;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  min-width: 10rem;
+  margin: 1rem;
 }
+.main-wrapper {
+  text-align: center;
+  width: 100%;
+  max-width: 920px;
+  border: 1px solid #f2f2f2;
+  border-radius: 4px 12px 12px 12px;
+  background-color: white;
+  margin-bottom: 16px;
+  box-shadow: 0px 2px 0px 2px rgba(0, 0, 0, 0.04);
+  padding: 20px;
+  color: #18171c;
+}
+
 .google-btn {
-width: 184px;
-height: 42px;
-margin: 1rem;
-background-color: #4285f4;
-border-radius: 2px;
-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  width: 184px;
+  height: 42px;
+  margin: 1rem;
+  background-color: #4285f4;
+  border-radius: 2px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
 }
 .google-btn:hover {
-box-shadow: 0 0 6px #4285f4;
+  box-shadow: 0 0 6px #4285f4;
 }
 
 .google-btn:active {
-background: #1669f2;
+  background: #1669f2;
 }
 .google-icon-wrapper {
-position: absolute;
-margin-top: 1px;
-margin-left: 1px;
-width: 40px;
-height: 40px;
-border-radius: 2px;
-background-color: #fff;
+  position: absolute;
+  margin-top: 1px;
+  margin-left: 1px;
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  background-color: #fff;
 }
 .google-icon {
-position: absolute;
-margin-top: 11px;
-margin-left: -8px;
-width: 18px;
-height: 18px;
+  position: absolute;
+  margin-top: 11px;
+  margin-left: -8px;
+  width: 18px;
+  height: 18px;
 }
 .btn-text {
-float: right;
-color: #fff;
-font-size: 14px;
-letter-spacing: 0.2px;
-font-family: "Roboto";
-background-color: #4285f4;
-width: 80%;
-height: 100%;
-text-align: center;
+  float: right;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  font-family: "Roboto";
+  background-color: #4285f4;
+  width: 80%;
+  height: 100%;
+  text-align: center;
+}
+
+.btn-text-welcome {
+  float: right;
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  font-family: "Roboto";
+  background-color: #4285f4;
+  width: 80%;
+  height: 100%;
+  text-align: center;
 }
