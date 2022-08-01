@@ -38,8 +38,6 @@ class Event extends Component {
         {showDetails && (
           <div className="event-details">
             <p className="description">{event.description}</p>
-            <p className="end-time">{event.end.dateTime}</p>
-            <p className="time-zone">{event.start.timeZone}</p>
           </div>
         )}
       </div>
